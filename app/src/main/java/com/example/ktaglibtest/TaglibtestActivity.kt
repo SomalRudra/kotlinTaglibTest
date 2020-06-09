@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.ParcelFileDescriptor
 import android.provider.OpenableColumns
 import android.util.Log
 import android.view.View
@@ -46,15 +47,16 @@ class TaglibtestActivity : AppCompatActivity() {
             val uri = data?.data
             try {
                 assert(uri != null)
-                val fd= uri?.let { contentResolver.openFileDescriptor(it,"r") }
-                var fd_ = fd.toString()
+                val fd:ParcelFileDescriptor?= uri?.let { contentResolver.openFileDescriptor(it,"r")}
                 Log.i("Taglib", "fd fetched")
+                val fd_:Int?=fd?.getFd()
                 val file_path = data?.data!!.path
                 val file_name = getFileName(uri)
                 if (file_path != null && file_name != null) Log.i("Taglib", "File Fetched")
                 Log.i("Taglib", "Fetching metadata")
-                //metadata = ktaglib.getAudioFile(fd_,file_path,file_name)
-                titleValue!!.text = fd_.toString()
+                metadata = fd_?.let { ktaglib.getAudioFile(it,file_path,file_name) }
+                Log.i("Taglib", "metadata fetched")
+                titleValue!!.text = metadata?.genre ?: "No artist found"
             } catch (e: FileNotFoundException) {
                 Log.i("Taglib", "Metadata extraction failed")
                 e.printStackTrace()
