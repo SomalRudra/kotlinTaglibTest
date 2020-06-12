@@ -1,4 +1,4 @@
-package com.musicbrainz.ktaglib
+package org.musicbrainz.ktaglib
 
 data class AudioFile(
     val path: String = "",

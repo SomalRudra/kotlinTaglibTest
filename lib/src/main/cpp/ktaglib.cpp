@@ -21,7 +21,7 @@ extern "C" JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
         return JNI_ERR;
     }
 
-    jclass songClass = env->FindClass("com/musicbrainz/ktaglib/AudioFile");
+    jclass songClass = env->FindClass("org/musicbrainz/ktaglib/AudioFile");
     globalSongClass = reinterpret_cast<jclass>(env->NewGlobalRef(songClass));
     env->DeleteLocalRef(songClass);
     songInit = env->GetMethodID(
@@ -48,7 +48,7 @@ extern "C" void JNI_OnUnload(JavaVM *vm, void *reserved) {
     env->DeleteGlobalRef(globalIntClass);
 }
 
-extern "C" JNIEXPORT jobject JNICALL Java_com_musicbrainz_ktaglib_KTagLib_getAudioFile(JNIEnv *env, jobject instance, jint fd_, jstring pathStr, jstring fileName) {
+extern "C" JNIEXPORT jobject JNICALL Java_org_musicbrainz_ktaglib_KTagLib_getAudioFile(JNIEnv *env, jobject instance, jint fd_, jstring pathStr, jstring fileName) {
     int fd = (int) fd_;
 
     jstring title = fileName;
@@ -141,7 +141,7 @@ extern "C" JNIEXPORT jobject JNICALL Java_com_musicbrainz_ktaglib_KTagLib_getAud
     return nullptr;
 }
 
-extern "C" JNIEXPORT jboolean JNICALL Java_com_musicbrainz_ktaglib_KTagLib_updateTags(
+extern "C" JNIEXPORT jboolean JNICALL Java_org_musicbrainz_ktaglib_KTagLib_updateTags(
         JNIEnv *env,
         jobject instance,
         jint fd_,
@@ -245,7 +245,7 @@ extern "C" JNIEXPORT jboolean JNICALL Java_com_musicbrainz_ktaglib_KTagLib_updat
     return false;
 }
 
-extern "C" JNIEXPORT jbyteArray JNICALL Java_com_musicbrainz_ktaglib_KTagLib_getArtwork(JNIEnv *env, jobject instance, jint fd_) {
+extern "C" JNIEXPORT jbyteArray JNICALL Java_org_musicbrainz_ktaglib_KTagLib_getArtwork(JNIEnv *env, jobject instance, jint fd_) {
 
     int fd = (int) fd_;
 

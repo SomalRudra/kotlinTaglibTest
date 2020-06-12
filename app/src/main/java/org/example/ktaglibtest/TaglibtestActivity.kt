@@ -1,5 +1,5 @@
 
-package com.example.ktaglibtest
+package org.example.ktaglibtest
 
 import android.app.Activity
 import android.content.Intent
@@ -12,10 +12,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ktaglibtest.R
 import java.io.FileNotFoundException
 import java.util.*
-import com.musicbrainz.ktaglib.AudioFile
-import com.musicbrainz.ktaglib.KTagLib
+import org.musicbrainz.ktaglib.AudioFile
+import org.musicbrainz.ktaglib.KTagLib
 
 class TaglibtestActivity : AppCompatActivity() {
     var titleValue: TextView? = null
@@ -23,7 +24,7 @@ class TaglibtestActivity : AppCompatActivity() {
     var titleKey: TextView? = null
 
     val ktaglib = KTagLib()
-    var metadata: AudioFile?=AudioFile()
+    var metadata: AudioFile?= AudioFile()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.taglibtest)

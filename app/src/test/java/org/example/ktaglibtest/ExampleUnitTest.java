@@ -1,4 +1,4 @@
-package com.example.ktaglibtest;
+package org.example.ktaglibtest;
 
 import org.junit.Test;
 

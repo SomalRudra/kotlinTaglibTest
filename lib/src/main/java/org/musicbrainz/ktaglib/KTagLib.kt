@@ -1,4 +1,4 @@
-package com.musicbrainz.ktaglib
+package org.musicbrainz.ktaglib
 
 class KTagLib {
 

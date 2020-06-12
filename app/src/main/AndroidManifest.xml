@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KTaglibTest">
-        <activity android:name=".MainActivity">
+        <activity android:name="org.example.ktaglibtest.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TaglibtestActivity"/>
+        <activity android:name="org.example.ktaglibtest.TaglibtestActivity"/>
     </application>
 
 </manifest>

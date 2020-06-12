@@ -1,4 +1,4 @@
-package com.musicbrainz.ktaglib
+package org.musicbrainz.ktaglib
 
 import org.junit.Test
 
