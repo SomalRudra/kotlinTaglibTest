@@ -14,5 +14,6 @@ data class AudioFile(
     val discTotal: Int? = 0,
     val duration: Int? = 0,
     val year: Int? = 0,
-    var genre: String? = ""
+    var genre: String? = "",
+    var MBID: String? = ""
 )
