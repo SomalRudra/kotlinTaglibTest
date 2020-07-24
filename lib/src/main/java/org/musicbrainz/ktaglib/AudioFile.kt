@@ -25,7 +25,16 @@ data class AudioFile(
     //Year
     val year: Int? = 0,
     var genre: String? = "",
-    var MBID: String? = "",
+    //MusicBrainz Artist ID
+    var MBartistID: String? = "",
+    //MusicBrainz Recording ID
+    var MBrecordingID: String? = "",
+        //MusicBrainz Release Artist ID
+    var MBreleaseArtistID: String? = "",
+    // Release ID
+    var MBreleaseID: String? = "",
+        //Musicbrainz Track ID
+    var MBtrackID: String? = "",
     //Original Year
     var origYear: Int? = 0,
     //Release Country
